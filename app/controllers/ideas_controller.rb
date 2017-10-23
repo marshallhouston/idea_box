@@ -1,11 +1,12 @@
 class IdeasController < ApplicationController
 
   def index
-    @ideas = current_user.ideas
+    @ideas = Idea.where(user_id: params[:user_id])
+    @user = User.find(params[:user_id])
   end
 
   def new
-    @user = current_user
+    @user = User.find(params[:user_id])
     @idea = @user.ideas.new
     @categories = Category.all
   end

@@ -9,7 +9,7 @@ describe "user can delete an idea" do
 
   it "clicks delete and the idea is removed" do
     visit user_idea_path(@idea1.user, @idea1)
-
+    
     click_on 'Delete this idea'
 
     expect(current_path).to eq(user_ideas_path(@user))

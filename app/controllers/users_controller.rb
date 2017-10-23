@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      # add message for success?
-      redirect_to user_path(user)
+    @user = User.new(user_params)
+    if @user.save
+      # add flash message for success
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       # add message for failure
       render :new
