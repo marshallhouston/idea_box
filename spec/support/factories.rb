@@ -3,6 +3,8 @@
 FactoryBot.define do
   factory :user do
     name "Julio Hightower"
+    email "jh@bama.com"
+    password "test"
   end
 
   factory :idea do
