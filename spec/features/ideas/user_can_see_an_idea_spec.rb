@@ -13,7 +13,7 @@ describe "user can visit a single idea page" do
 
     click_on "idea1"
 
-    expect(current_path).to eq(user_idea_path(@user, @idea1))
+    expect(current_path).to eq(user_idea_path(@idea1.user, @idea1))
     expect(page).to have_content(@idea1.name)
     expect(page).to have_content(@idea1.description)
     expect(page).to_not have_content(@idea2.name)
