@@ -37,5 +37,11 @@ describe Idea do
 
       expect(idea).to respond_to(:user)
     end
+
+    it "belongs to a category" do
+      idea = build(:idea)
+
+      expect(idea).to respond_to(:category)
+    end
   end
 end
