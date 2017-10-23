@@ -1,0 +1,7 @@
+<header>
+  <%= link_to "Back to #{@user.name}", user_path(@user) %>
+</header>
+
+<h3 class='headline'> <%= @idea.name %></h3>
+<p><%= @idea.description %></p>
+<%= link_to "Edit this idea", edit_user_idea_path(@user, @idea) %>

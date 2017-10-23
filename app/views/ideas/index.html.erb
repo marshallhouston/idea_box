@@ -1,0 +1,11 @@
+<header>
+  <%= link_to "Back to #{@user.name}", user_path(@user) %>
+</header>
+
+<h3 class='headline'>Ideas for <%="#{@user.name}"%></h3>
+
+<% @ideas.each do |idea| %>
+  <section class='ideas'>
+    <p><%= idea.name %>: <%= idea.description %></p>
+  </section>
+<% end %>
