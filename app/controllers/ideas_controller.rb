@@ -21,7 +21,7 @@ class IdeasController < ApplicationController
     @categories = Category.all
     @idea = @user.ideas.new(idea_params)
     if @idea.save
-      redirect_to user_ideas_path(@user)
+      redirect_to user_idea_path(@user, @idea)
     else
       render :new
     end

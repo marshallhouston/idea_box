@@ -4,5 +4,6 @@
 
 <h3 class='headline'> <%= @idea.name %></h3>
 <p><%= @idea.description %></p>
+<p>Category: <%= @idea.category.name %></p>
 <%= link_to "Edit this idea", edit_user_idea_path(@user, @idea) %><br>
 <%= link_to "Delete this idea", user_idea_path(@user, @idea), method: :delete %>
