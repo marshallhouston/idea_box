@@ -1,11 +1,8 @@
 FactoryBot.define do
-  factory :idea do
-    name "Jobs"
-    description "find a new job"
-    admin false
+  factory :user do
+    name "Julio Hightower"
   end
 
-  
   # This will use the User class (Admin would have been guessed)
  # factory :admin, class: User do
  #   first_name "Admin"
