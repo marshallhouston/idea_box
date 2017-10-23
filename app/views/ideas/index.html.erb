@@ -6,6 +6,6 @@
 
 <% @ideas.each do |idea| %>
   <section class='ideas'>
-    <p><%= idea.name %>: <%= idea.description %></p>
+    <p><%= link_to "#{idea.name}", user_idea_path(@user, idea) %>: <%= idea.description %></p>
   </section>
 <% end %>
