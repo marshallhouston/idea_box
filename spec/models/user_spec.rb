@@ -14,4 +14,12 @@ describe User do
       expect(user).to be_valid
     end
   end
+
+  describe "relationships" do
+    it "has ideas" do
+      user = build(:user)
+
+      expect(user).to respond_to(:ideas)
+    end
+  end
 end
