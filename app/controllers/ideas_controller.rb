@@ -11,8 +11,8 @@ class IdeasController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @idea = @user.ideas.find(params[:id])
+    @idea = Idea.find(params[:id])
+    @user = @idea.user
   end
 
   def create
@@ -26,15 +26,14 @@ class IdeasController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @idea = @user.ideas.find(params[:id])
+    @idea = Idea.find(params[:id])
+    @user = @idea.user
   end
 
   def update
-    user = User.find(params[:user_id])
-    idea = user.ideas.find(params[:id])
+    idea = Idea.find(params[:id])
     idea.update(idea_params)
-    redirect_to user_idea_path(user, idea)
+    redirect_to user_idea_path(idea.user, idea)
   end
 
   def destroy
