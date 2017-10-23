@@ -9,6 +9,12 @@ FactoryBot.define do
     name "sleep more"
     description "rest early and often"
     user #this creates a belongs_to association with user in this factory
+    category
+  end
+
+  factory :category do
+    name "habits"
+    description "ideas about good habits"
   end
 
   # This will use the User class (Admin would have been guessed)
