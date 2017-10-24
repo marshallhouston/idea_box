@@ -8,9 +8,13 @@ class ApplicationController < ActionController::Base
   end
 
   def check_logged_in
-    if current_user.nil?
+    if !session[:user_id]
       flash[:danger] = "Login to visit that page."
       redirect_to root_path
     end
+    # if current_user.nil?
+    #   flash[:danger] = "Login to visit that page."
+    #   redirect_to root_path
+    # end
   end
 end

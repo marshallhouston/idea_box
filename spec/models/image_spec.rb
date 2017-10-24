@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Image do
-  describe "validations" do
+  describe "Validations" do
     context "invalid"
     it "is invalid without a name" do
       image = Image.new(url: "https://unsplash.com/photos/b_8eErngWm4")
@@ -17,9 +17,17 @@ describe Image do
 
     context "valid"
     it "is valid with a name and url" do
-      image = create(:image)
+      image = build(:image)
 
       expect(image).to be_valid
+    end
+  end
+
+  describe "Associations" do
+    it "has many ideas" do
+      image = build(:image)
+
+      expect(image).to respond_to(:ideas)
     end
   end
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Idea do
-  describe "validations" do
+  describe "Validations" do
     before :each do
       @user = build(:user)
     end
@@ -31,7 +31,7 @@ describe Idea do
     end
   end
 
-  describe "relationships" do
+  describe "Associations" do
     it "belongs to a user" do
       idea = build(:idea)
 
@@ -42,6 +42,12 @@ describe Idea do
       idea = build(:idea)
 
       expect(idea).to respond_to(:category)
+    end
+
+    it "has many images" do
+      idea = build(:idea)
+
+      expect(idea).to respond_to(:images)
     end
   end
 end
