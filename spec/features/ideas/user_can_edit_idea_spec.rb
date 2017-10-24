@@ -6,6 +6,11 @@ describe "user edits an existing idea" do
     @user = create(:user)
     @category = Category.create!(name: "hobbies", description: "ideas for hobbies")
     @idea1 = Idea.create!(name: "idea1", description: "read", user: @user, category: build(:category))
+    visit root_path
+    click_on 'Log In'
+    fill_in 'session[email]', with: @user.email
+    fill_in 'session[password]', with: @user.password
+    click_on 'Log In'
   end
 
   it "changes information for an idea and it updates that information" do

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :not_logged_in, except: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -7,11 +9,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # add flash message for success
+      flash[:success] = "Thanks for signing up!"
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      # add message for failure
+      flash[:danger] = "Invalid email/password"
       render :new
     end
   end
