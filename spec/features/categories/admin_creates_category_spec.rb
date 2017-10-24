@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "When I visit admin new category" do
   describe "as an admin" do
-    scenario "I see a new form" do
+    scenario "I see a new form, fill it in, and click create" do
       admin_user = User.create!(name: "admin",
                                 email: "admin@admin.com",
                                 password: "pass",
