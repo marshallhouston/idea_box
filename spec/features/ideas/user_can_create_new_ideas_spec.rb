@@ -4,11 +4,15 @@ describe "user creates new idea" do
   before :each do
     @user = create(:user)
     @category = create(:category)
+
+    visit root_path
+    click_on 'Log In'
+    fill_in 'session[email]', with: @user.email
+    fill_in 'session[password]', with: @user.password
+    click_on 'Log In'
   end
 
   scenario "creates new idea" do
-    visit user_path(@user)
-
     click_on('Create a new idea')
 
     expect(current_path).to eq(new_user_idea_path(@user))

@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @ideas = @user.ideas
+    @ideas = current_user.ideas
   end
 
   private

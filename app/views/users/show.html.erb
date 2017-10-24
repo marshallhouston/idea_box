@@ -1,10 +1,10 @@
-<h3 class='headline'>Welcome, <%= @user.name %>!</h3>
+<h3 class='headline'>Welcome, <%= current_user.name %>!</h3>
 
-<%= link_to "Create a new idea", new_user_idea_path(@user) %>
+<%= link_to "Create a new idea", new_user_idea_path(current_user) %>
 
 
 <% @ideas.each do |idea| %>
   <section class='ideas'>
-    <p><%= link_to "#{idea.name}", user_idea_path(@user, idea) %>: <%= idea.description %></p>
+    <p><%= link_to "#{idea.name}", user_idea_path(current_user, idea) %>: <%= idea.description %></p>
   </section>
 <% end %>
