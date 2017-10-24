@@ -19,6 +19,10 @@ FactoryBot.define do
     description "ideas about good habits"
   end
 
+  factory :image do
+    name "image_1"
+    url "https://unsplash.com/photos/b_8eErngWm4"
+  end
   # This will use the User class (Admin would have been guessed)
  # factory :admin, class: User do
  #   first_name "Admin"
