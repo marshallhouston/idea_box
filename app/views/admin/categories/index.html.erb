@@ -1,5 +1,8 @@
 <h3 class='headline'>All Categories</h3>
 
-<% @categories.each do |category| %>
-  <p><%= link_to "#{category.name}", admin_category_path(category) %></p>
-<% end %>
+<section class='categories'>
+  <% @categories.each do |category| %>
+    <p><%= link_to "#{category.name}", admin_category_path(category) %></p>
+    <p><%= link_to "Delete this category", admin_category_path(category), method: :delete %></p>
+  <% end %>
+</section>
