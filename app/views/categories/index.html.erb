@@ -1,0 +1,9 @@
+<% if current_user.nil? %>
+  <%= link_to 'Log In', login_path %>
+<% end %>
+
+<h3 class='headline'>All Categories</h3>
+
+<% @categories.each do |category| %>
+  <h4 class='category'><%= link_to "#{category.name}", category_path(category) %></h4>
+<% end %>
