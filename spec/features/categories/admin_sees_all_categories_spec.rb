@@ -33,4 +33,5 @@ describe "When I visit admin categories index" do
       expect(status_code).to eq(404)
     end
   end
+
 end

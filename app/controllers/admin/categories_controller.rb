@@ -4,8 +4,22 @@ class Admin::CategoriesController < Admin::BaseController
     @categories = Category.all
   end
 
+  def show
+    @category = Category.find(params[:id])
+  end
+
   def new
     @category = Category.new
+  end
+
+  def edit
+    @category = Category.find(params[:id])
+  end
+
+  def update
+    category = Category.find(params[:id])
+    category.update(category_params)
+    redirect_to admin_category_path(category)
   end
 
   def create
