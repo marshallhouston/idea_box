@@ -23,6 +23,8 @@ FactoryBot.define do
     name "image_1"
     url "https://unsplash.com/photos/b_8eErngWm4"
   end
+
+  
   # This will use the User class (Admin would have been guessed)
  # factory :admin, class: User do
  #   first_name "Admin"
