@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: 'welcome#index'
 
+  namespace :admin do
+    resources :categories
+  end
+
   resources :users do
     resources :ideas
   end

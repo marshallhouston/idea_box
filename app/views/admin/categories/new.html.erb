@@ -1,0 +1,12 @@
+<h3 class='headline'>Create A New Category</h3>
+
+<%= form_for [:admin, @category] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit %>
+<% end %>
