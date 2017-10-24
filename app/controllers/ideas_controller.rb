@@ -1,6 +1,6 @@
 class IdeasController < ApplicationController
 
-  before_action :not_logged_in
+  before_action :check_logged_in
 
   def index
     @ideas = Idea.where(user_id: params[:user_id])
