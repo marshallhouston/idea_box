@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Category do
-  describe "validations" do
+  describe "Validations" do
     it "is invalid without a name" do
       category = Category.new(description: "some description")
 
@@ -29,8 +29,8 @@ describe Category do
     end
   end
 
-  describe "relationships" do
-    it "has ideas" do
+  describe "Associations" do
+    it "has many ideas" do
       category = build(:category)
 
       expect(category).to respond_to(:ideas)

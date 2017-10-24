@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe User do
-  describe "validations" do
+  describe "Validations" do
     it "is invalid" do
       user = User.new
 
@@ -15,7 +15,7 @@ describe User do
     end
   end
 
-  describe "relationships" do
+  describe "Associations" do
     it "has ideas" do
       user = build(:user)
 
