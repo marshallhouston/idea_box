@@ -1,7 +1,7 @@
 class Admin::CategoriesController < Admin::BaseController
 
   before_action :find_category, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @categories = Category.all
   end
@@ -33,7 +33,6 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     @category.destroy
-
     redirect_to admin_categories_path
   end
 
