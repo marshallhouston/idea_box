@@ -1,0 +1,6 @@
+<h3 class='headline'>All Images</h3>
+
+<% @images.each do |image|  %>
+  <p><%= image.name %></p>
+  <%= image_tag(image.url, size: "50x75", alt: image.name ) %>
+<% end %>
