@@ -1,11 +1,12 @@
 class Admin::ImagesController < Admin::BaseController
 
+  before_action :find_image, only: [:show, :edit, :update, :destroy]
+
   def index
     @images = Image.all
   end
 
   def show
-    @image = Image.find(params[:id])
   end
 
   def new
@@ -23,19 +24,15 @@ class Admin::ImagesController < Admin::BaseController
   end
 
   def edit
-    @image = Image.find(params[:id])
   end
 
   def update
-    image = Image.find(params[:id])
-    image.update(image_params)
-    image.save
-    redirect_to admin_image_path(image)
+    @image.update(image_params)
+    redirect_to admin_image_path(@image)
   end
 
   def destroy
-    image = Image.find(params[:id])
-    image.destroy
+    @image.destroy
     redirect_to admin_images_path
   end
 
@@ -45,4 +42,7 @@ class Admin::ImagesController < Admin::BaseController
     params.require(:image).permit(:name, :url)
   end
 
+  def find_image
+    @image = Image.find(params[:id])
+  end
 end
