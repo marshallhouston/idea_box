@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   controller :sessions do
     get '/login' => :new
     post '/login' => :create
-    delete '/logout' => :destroy
+    get '/logout' => :destroy #this is the same as using delete and then having the method: :delete on the actual link
   end
 end

@@ -9,7 +9,7 @@
   </head>
   <header>
     <% if current_user %>
-      <%= link_to "Log Out", logout_path, method: :delete %>
+      <%= link_to "Log Out", logout_path%>
     <% end %>
   </header><br>
   <% flash.each do |key, value| %>
