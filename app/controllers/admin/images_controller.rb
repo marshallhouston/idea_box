@@ -4,6 +4,10 @@ class Admin::ImagesController < Admin::BaseController
     @images = Image.all
   end
 
+  def show
+    @image = Image.find(params[:id])
+  end
+
   def new
     @image = Image.new
   end
@@ -16,6 +20,17 @@ class Admin::ImagesController < Admin::BaseController
     else
       render :new
     end
+  end
+
+  def edit
+    @image = Image.find(params[:id])
+  end
+
+  def update
+    image = Image.find(params[:id])
+    image.update(image_params)
+    image.save
+    redirect_to admin_image_path(image)
   end
 
   def destroy
