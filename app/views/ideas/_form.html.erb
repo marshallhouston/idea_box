@@ -7,5 +7,13 @@
 
   <%= f.collection_select(:category_id, @categories, :id, :name) %><br><br>
 
+  <%= f.label "Image" %><br />
+  <%= f.collection_check_boxes :image_ids, @images, :id, :name do |b| %>
+  <div class="collection-check-box">
+    <%= b.check_box %>
+    <%= b.label %>
+  </div>
+  <% end %>
+  
   <%= f.submit %>
 <% end %>

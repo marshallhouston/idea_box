@@ -1,9 +1,14 @@
 <header>
-  <%= link_to "Back to #{@user.name}", user_path(@user) %>
+  <%= link_to "Back to #{current_user.name}", user_path(current_user) %>
 </header>
 
 <h3 class='headline'> <%= @idea.name %></h3>
 <p><%= @idea.description %></p>
 <p>Category: <%= @idea.category.name %></p>
-<%= link_to "Edit this idea", edit_user_idea_path(@user, @idea) %><br>
-<%= link_to "Delete this idea", user_idea_path(@user, @idea), method: :delete %>
+
+<% @idea.images.each do |image| %>
+  <%=image_tag(image.url, class: "idea-image")%>
+<% end %>
+
+<%= link_to "Edit this idea", edit_user_idea_path(current_user, @idea) %><br>
+<%= link_to "Delete this idea", user_idea_path(current_user, @idea), method: :delete %>
