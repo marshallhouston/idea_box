@@ -1,6 +1,9 @@
 <h3 class='headline'>All Images</h3>
 
-<% @images.each do |image|  %>
+<section class='images'>
+  <% @images.each do |image|  %>
   <p><%= image.name %></p>
   <%= image_tag(image.url, size: "50x75", alt: image.name ) %>
-<% end %>
+  <p><%= link_to "Delete this image", admin_image_path(image), method: :delete %></p>
+  <% end %>
+</section>

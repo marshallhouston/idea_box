@@ -27,15 +27,12 @@ describe "When I try to delete a category" do
 
   describe "as a default user" do
     scenario "I see a 404 error" do
-      Category.create!(name: "cats", description: "cats1")
       default_user = User.create!(name: "default",
                                   email: "def@def.com",
                                   password: "pass")
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default_user)
 
-      #how to test this functionality???????????????????????????????????
-      # a user won't be able to see the admin_categories path
       visit admin_categories_path
 
       expect(status_code).to eq(404)
