@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :categories, only: [:index, :show]
+  resources :images, only: [:index, :show]
 
   controller :sessions do
     get '/login' => :new

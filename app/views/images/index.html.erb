@@ -1,0 +1,10 @@
+<h3 class='headline'>All Images</h3>
+
+<section class='images'>
+  <% @images.each do |image|  %>
+    <%= image_tag(image.url, size: "150x100") %><br><br>
+    <% image.ideas.each do |idea| %>
+      <%= link_to "#{idea.name}", user_idea_path(current_user, idea) %><br><br>
+    <% end %>
+  <% end %>
+</section>

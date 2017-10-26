@@ -3,4 +3,5 @@ class Image < ApplicationRecord
   validates :url, uniqueness: true, presence: true
   has_many :idea_images, dependent: :destroy
   has_many :ideas, through: :idea_images
+
 end
