@@ -36,4 +36,11 @@ describe Category do
       expect(category).to respond_to(:ideas)
     end
   end
+
+  # describe "Instance Methods" do
+  #   it "#category_ideas_specific_user" do
+  #
+  #     # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default_user)
+  #   end
+  # end
 end
