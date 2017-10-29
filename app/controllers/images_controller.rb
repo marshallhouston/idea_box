@@ -6,5 +6,6 @@ class ImagesController < ApplicationController
 
   def show
     @image = Image.find(params[:id])
+    @ideas = @image.ideas.where(user_id: current_user.id)
   end
 end

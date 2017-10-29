@@ -12,9 +12,5 @@ class ApplicationController < ActionController::Base
       flash[:danger] = "Login to visit that page."
       redirect_to root_path
     end
-    # if !session[:user_id]
-    #   flash[:danger] = "Login to visit that page."
-    #   redirect_to root_path
-    # end
   end
 end

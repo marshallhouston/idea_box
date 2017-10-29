@@ -7,5 +7,5 @@ class Admin::BaseController < ApplicationController
       render file: "#{Rails.root}/public/404", layout: false, status: :not_found
     end
   end
-  
+
 end

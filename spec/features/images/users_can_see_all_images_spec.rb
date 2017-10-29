@@ -18,12 +18,12 @@ describe "when I visit the images index" do
       expect(page).to have_css("img[src$='#{@image2.url}']")
     end
 
-    scenario "I can visit an idea's show page from the image index" do
+    scenario "I can visit an image's show page from the image index" do
       visit images_path
-      expect(page).to have_link(@idea.name)
+      expect(page).to have_link(@image1.name)
 
-      click_link(@idea.name, :match => :first)
-      expect(current_path).to eq(user_idea_path(@user, @idea))
+      click_link(@image1.name)
+      expect(current_path).to eq(image_path(@image1))
     end
   end
 end

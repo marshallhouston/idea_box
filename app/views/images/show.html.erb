@@ -1,6 +1,7 @@
 <h2 class='headline'><%= @image.name %></h2>
 
-<%= image_tag(@image.url, size: "400x300") %>
-<% @image.ideas.each do |idea| %>
+<%= image_tag(@image.url, size: "400x300") %><br><br>
+<h4>Ideas for <%= @image.name %></h4>
+<% @ideas.each do |idea| %>
   <%= link_to "#{idea.name}", user_idea_path(current_user, idea) %>
 <% end %>
