@@ -1,0 +1,16 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Categories", categories_path %></li>
+        <% if !current_user %>
+        <li><%= link_to "Log in", login_path %></li>
+        <% elsif current_user %>
+        <li><%= link_to "Ideas", user_ideas_path(current_user) %></li>
+        <li><%= link_to "Log Out", logout_path%></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
