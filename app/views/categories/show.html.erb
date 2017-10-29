@@ -3,3 +3,9 @@
 <h3 class='headline'><%= @category.name %></h3>
 
 <p><%= @category.description %></p>
+
+<section class='ideas'>
+  <% @category.ideas.each do |idea| %>
+  <li><%= link_to "#{idea.name}", user_idea_path(current_user, idea) %></li>
+  <% end %>
+</section>

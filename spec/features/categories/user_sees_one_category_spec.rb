@@ -19,16 +19,20 @@ describe "user can view a single category" do
     end
   end
 
-  xdescribe "that has ideas" do
-
-    before :each do
-      #create a user
-      #create a category with 2 ideas
-      #log that user in
-    end
-
+  describe "that has ideas" do
     it "shows the ideas for the category" do
-      #
+      default_user = create(:user)
+      category = create(:category)
+      category.ideas.create(name: "idea1", description: "desc", user: default_user)
+      idea2 = category.ideas.create(name: "idea2", description: "desc2", user: default_user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default_user)
+
+      visit category_path(category)
+      expect(page).to have_content("idea1")
+      expect(page).to have_content("idea2")
+
+      click_on "idea2"
+      expect(current_path).to eq(user_idea_path(default_user, idea2))
     end
   end
 end
