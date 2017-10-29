@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  before_action :check_logged_in, only: :show
+
   def index
     @categories = Category.all
   end
