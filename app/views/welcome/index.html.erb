@@ -1,5 +1,11 @@
 <div class="center jumbotron">
   <h1>Welcome to IdeaBox!</h1>
   <br><br>
-  <%= link_to "Sign up!", new_user_path, class: "btn btn-lg btn-primary" %>
+  <% if !current_user %>
+    <%= link_to "Sign up!", new_user_path, class: "btn btn-lg btn-primary" %>
+  <% elsif current_user %>
+    <%= link_to "My Ideas", user_ideas_path(current_user), class: "btn btn-lg btn-primary" %>
+    <%= link_to "Categories", categories_path, class: "btn btn-lg btn-primary" %>
+    <%= link_to "Create a New Idea", new_user_idea_path(current_user), class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>

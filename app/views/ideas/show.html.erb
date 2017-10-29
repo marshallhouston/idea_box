@@ -7,7 +7,7 @@
 <p>Category: <%= @idea.category.name %></p>
 
 <% @idea.images.each do |image| %>
-  <%=image_tag(image.url, class: "idea-image")%><br>
+  <%=image_tag(image.url, class: "idea-image")%><br><br>
 <% end %>
 
 <%= link_to "Edit this idea", edit_user_idea_path(current_user, @idea) %><br>
