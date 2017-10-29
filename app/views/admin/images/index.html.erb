@@ -6,6 +6,6 @@
   <% @images.each do |image|  %>
   <p><%= image.name %></p>
   <%= image_tag(image.url, size: "150x100", alt: image.name ) %>
-  <p><%= link_to "Delete this image", admin_image_path(image), method: :delete, class: "btn-primary btn-xs btn-delete" %></p>
+  <p><%= button_to "Delete this image", admin_image_path(image), method: :delete, class: "btn-primary btn-xs btn-delete" %></p>
   <% end %>
 </section>

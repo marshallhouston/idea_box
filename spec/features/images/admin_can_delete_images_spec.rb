@@ -18,7 +18,7 @@ describe "When I try to delete an image" do
       expect(page).to have_content(image2.name)
 
       within ".images" do
-        click_link("Delete this image", :match => :first)
+        click_button("Delete this image", :match => :first)
       end
 
       expect(page).to have_content(image2.name)
