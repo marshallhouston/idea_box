@@ -1,8 +1,9 @@
 <h2 class='headline'>All Categories</h2>
 
+<h3><%= link_to "Create a new category", new_admin_category_path %></h3>
 <section class='categories'>
   <% @categories.each do |category| %>
-    <p><%= link_to "#{category.name}", admin_category_path(category) %></p>
-    <p><%= link_to "Delete this category", admin_category_path(category), method: :delete %></p>
+    <h4><%= link_to "#{category.name}", admin_category_path(category) %></h4>
+    <p><%= button_to "Delete this category", admin_category_path(category), method: :delete, class: "btn-primary btn-xs btn-delete" %></p>
   <% end %>
 </section>

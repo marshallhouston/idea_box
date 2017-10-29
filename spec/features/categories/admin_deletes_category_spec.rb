@@ -15,7 +15,7 @@ describe "When I try to delete a category" do
       visit admin_categories_path
 
       within ".categories" do
-        click_link("Delete this category", :match => :first)
+        click_on("Delete this category", :match => :first)
       end
 
       expect(current_path).to eq(admin_categories_path)

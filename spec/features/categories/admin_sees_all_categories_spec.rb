@@ -15,6 +15,7 @@ describe "When I visit admin categories index" do
 
       visit admin_categories_path
 
+      expect(page).to have_link("Create a new category")
       expect(page).to have_content(category1.name)
       expect(page).to have_content(category2.name)
     end
