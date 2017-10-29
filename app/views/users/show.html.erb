@@ -1,7 +1,6 @@
 <h2 class='headline'>Welcome, <%= current_user.name %>!</h2>
 
-<%= link_to "Create a new idea", new_user_idea_path(current_user) %>
-
+<h4><%= link_to "Create a new idea", new_user_idea_path(current_user) %></h4>
 
 <% @ideas.each do |idea| %>
   <section class='ideas'>
