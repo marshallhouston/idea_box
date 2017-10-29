@@ -6,7 +6,7 @@ describe 'guests can log into site' do
     user = User.create!(name: 'sto', email: 'sto@sto.com', password: 'sto')
     visit root_path
 
-    click_on 'Log In'
+    click_on 'Log in'
 
     expect(current_path).to eq(login_path)
 
