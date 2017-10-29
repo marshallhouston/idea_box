@@ -1,5 +1,7 @@
 <h2 class='headline'>All Images</h2>
 
+<h3><%= link_to "Create a new image", new_admin_image_path %></h3>
+
 <section class='images'>
   <% @images.each do |image|  %>
   <p><%= image.name %></p>

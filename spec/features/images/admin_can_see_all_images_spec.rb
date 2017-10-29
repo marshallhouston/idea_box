@@ -14,6 +14,7 @@ describe "When I visit admin images index" do
 
       visit admin_images_path
 
+      expect(page).to have_link("Create a new image")
       expect(page).to have_content(image1.name)
       expect(page).to have_css("img[src$='#{image1.url}']")
       expect(page).to have_content(image2.name)
