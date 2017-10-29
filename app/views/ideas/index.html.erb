@@ -2,7 +2,7 @@
   <%= link_to "Back to #{current_user.name}", user_path(current_user) %>
 </header>
 
-<h3 class='headline'>Ideas for <%="#{current_user.name}"%></h3>
+<h2 class='headline'>Ideas for <%="#{current_user.name}"%></h2>
 
 <% @ideas.each do |idea| %>
   <section class='ideas'>
